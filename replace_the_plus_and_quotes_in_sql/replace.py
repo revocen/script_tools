@@ -1,8 +1,8 @@
 # When I get sql from java, there's always many plus and double quotes in it.
 # Delete them is too boring. So, tool it for quickly
 
-import pyperclip
 import re
+import pyperclip
 
 target = pyperclip.paste()
 
