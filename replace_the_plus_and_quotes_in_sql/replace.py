@@ -2,9 +2,14 @@
 # Delete them is too boring. So, tool it for quickly
 
 import pyperclip
+import re
 
-result = pyperclip.paste();
-result = result.replace("+ \"","").replace("\"","")
-pyperclip.copy(result)
+target = pyperclip.paste()
 
-print('Done')
+reg1 = re.compile(r'\+\s*\"')
+target = reg1.sub(' ', target)
+
+reg2 = re.compile(r'\"')
+target = reg2.sub(' ', target)
+
+pyperclip.copy(target)
