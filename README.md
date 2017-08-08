@@ -6,5 +6,5 @@ all codes based on python 3
 
 ### Model Needed
 
-#### replace_the_plus_and_quotes_in_sql
+#### sql_in_code
   - pyperclip
