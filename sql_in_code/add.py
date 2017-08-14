@@ -6,7 +6,7 @@ target = pyperclip.paste()
 
 array = target.splitlines()
 
-regexStart = re.compile('^\s+')
+regexStart = re.compile('^\s*')
 
 result = ''
 
