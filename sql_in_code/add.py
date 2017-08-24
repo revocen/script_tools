@@ -6,11 +6,14 @@ target = pyperclip.paste()
 
 array = target.splitlines()
 
-regexStart = re.compile('^\s*')
+regexStart = re.compile('^( )*')
+regexTab = re.compile('\t')
 
 result = ''
 
 for item in array:
-    result += '\r\n\t\t\t\t' + regexStart.sub('+ "',item) + ' "'
+    temp = regexStart.sub('+ "',item)
+    temp = regexTab.sub('   ',temp)
+    result += '\r\n' + temp + ' "'
 
 pyperclip.copy(result)
