@@ -6,7 +6,6 @@ def generate(target,number):
     result = target + time.strftime('_%Y%m%d_' + str(number).zfill(2), time.localtime()) + '_revocen'
     return result
 
-r = ''
 target = pyperclip.paste()
 
 conn = sqlite3.connect('logger.db')
@@ -43,17 +42,8 @@ sql_insert = "insert into memory (name,usetime,res,code) values(?,CURRENT_TIMEST
 cur.execute(sql_insert, (target,r,code))
 conn.commit()
 
-# print('rowcount: ' + str(cursor_select.rowcount))
-# for row in cursor_select:
-#     print('name: ' + row[0])
-#     print('usetime: ' + row[1])
-#     print('res: ' + row[2])
-
 print('result ->' + r)
 print('done')
 
 pyperclip.copy(r)
 conn.close()
-
-
- 
