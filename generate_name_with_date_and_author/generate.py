@@ -16,7 +16,7 @@ sql_create = 'create table if not exists memory (name char(200), usetime datetim
 cur.execute(sql_create)
 
 # 查询是否已存在
-sql_select = "select * from memory where name = ? order by usetime desc limit 1"
+sql_select = "select * from memory where name = ? and strftime('%Y-%m-%d',usetime) = strftime('%Y-%m-%d','now') order by usetime desc limit 1"
 cursor_select = cur.execute(sql_select, (str(target),))
 count_select = cursor_select.fetchall()
 s = len(count_select)
