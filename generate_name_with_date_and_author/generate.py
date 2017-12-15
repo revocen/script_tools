@@ -1,6 +1,6 @@
 import sqlite3
-import pyperclip
 import time
+import pyperclip
 
 def generate(target,number):
     result = target + time.strftime('_%Y%m%d_' + str(number).zfill(2), time.localtime()) + '_revocen'
